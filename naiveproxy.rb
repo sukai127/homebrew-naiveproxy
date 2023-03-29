@@ -2,12 +2,15 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Naiveproxy < Formula
+  arch arm: "arm64", intel: "x64"
+  url "https://github.com/klzgrad/naiveproxy/releases/download/v111.0.5563.64-1/naiveproxy-v111.0.5563.64-1-mac-#{arch}.tar.xz"
+  sha256 arm:   "996060e25582f908339470c452dec182aaf9b115298d669e3461cdf1850d0961",
+         intel: "5aee1313980682c90449ed98fb4e3f900b8408eafa765b347bf55ae009c9e2b1"
   desc "Make a fortune quietly"
   homepage "https://github.com/klzgrad/naiveproxy"
-  url "https://github.com/klzgrad/naiveproxy/releases/download/v111.0.5563.64-1/naiveproxy-v111.0.5563.64-1-mac-x64.tar.xz"
   version "v111.0.5563.64-1"
-  sha256 "5aee1313980682c90449ed98fb4e3f900b8408eafa765b347bf55ae009c9e2b1"
   license ""
+
 
   # depends_on "cmake" => :build
 
