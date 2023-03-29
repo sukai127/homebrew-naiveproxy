@@ -3,7 +3,7 @@
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Naiveproxy < Formula
   arch arm: "arm64", intel: "x64"
-  url "https://github.com/klzgrad/naiveproxy/releases/download/v111.0.5563.64-1/naiveproxy-v111.0.5563.64-1-mac-#{arch}.tar.xz"
+  url "https://github.com/klzgrad/naiveproxy/archive/refs/tags/v111.0.5563.64-1.tar.gz"
   sha256 arm:   "996060e25582f908339470c452dec182aaf9b115298d669e3461cdf1850d0961",
          intel: "5aee1313980682c90449ed98fb4e3f900b8408eafa765b347bf55ae009c9e2b1"
   desc "Make a fortune quietly"
@@ -12,16 +12,20 @@ class Naiveproxy < Formula
   license ""
 
 
-  # depends_on "cmake" => :build
+  depends_on "go" => :build
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    # system "./configure", *std_configure_args, "--disable-silent-rules"
-    sbin.install "naive"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
+
+  # def install
+  #   # ENV.deparallelize  # if your formula fails when building in parallel
+  #   # Remove unrecognized options if warned by configure
+  #   # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
+  #   # system "./configure", *std_configure_args, "--disable-silent-rules"
+  #   sbin.install "naive"
+  #   # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+  # end
 
   def caveats
     <<~EOS
