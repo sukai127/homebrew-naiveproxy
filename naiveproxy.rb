@@ -13,7 +13,8 @@ class Naiveproxy < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "install", "github.com/caddyserver/xcaddy/cmd/xcaddy@latest"
+    system "xcaddy", "build", "--with", "github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive"
   end
 
   # def install
