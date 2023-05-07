@@ -22,7 +22,7 @@ class Naiveproxy < Formula
 
   def caveats
     <<~EOS
-    Create naiveproxy configure file on `$HOME/.naiveproxy/config.json`
+    Create naiveproxy configure file on `#{ENV['HOME']}/.naiveproxy/config.json`
     {
       "listen": "socks://127.0.0.1:1080",
       "proxy": "https://user:pass@example.com"
@@ -33,7 +33,7 @@ class Naiveproxy < Formula
   end
 
   service do
-    run [opt_sbin/"naive", "$HOME/.naiveproxy/config.json"]
+    run [opt_sbin/"naive", "#{ENV['HOME']}/.naiveproxy/config.json"]
   end
 
 
