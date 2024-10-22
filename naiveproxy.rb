@@ -4,9 +4,9 @@
 class Naiveproxy < Formula
   desc "Make a fortune quietly"
   homepage "https://github.com/klzgrad/naiveproxy"
-  url "https://github.com/klzgrad/naiveproxy/releases/download/v125.0.6422.35-1/naiveproxy-v125.0.6422.35-1-mac-x64.tar.xz"
-  version "v125.0.6422.35-1"
-  sha256 "6dc3acc9ba4c9d3fe40de51105b8111d2cd9dc72788c32c27fc2e9c0a0f2f26c"
+  url "https://github.com/klzgrad/naiveproxy/releases/download/v130.0.6723.40-5/naiveproxy-v130.0.6723.40-5-mac-arm64.tar.xz"
+  version "v130.0.6723.40-5"
+  sha256 "f5b2c010d13d97d57a7b2b222eab32d38cd6dad9dd6519bc9d1844e79119ba90"
   license ""
 
   # depends_on "cmake" => :build
