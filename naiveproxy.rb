@@ -34,6 +34,9 @@ class Naiveproxy < Formula
 
   service do
     run [opt_sbin/"naive", "#{ENV['HOME']}/.naiveproxy/config.json"]
+    restart :on_failure
+    log_path "#{ENV['HOMEBREW_PREFIX']}//var/log/naive.log"
+    error_log_path "#{ENV['HOMEBREW_PREFIX']}/var/log/naive_error.log"
   end
 
 
