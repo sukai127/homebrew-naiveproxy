@@ -7,7 +7,7 @@ class Naiveproxy < Formula
   url "https://github.com/klzgrad/naiveproxy/releases/download/v130.0.6723.40-5/naiveproxy-v130.0.6723.40-5-mac-arm64.tar.xz"
   version "v130.0.6723.40-5"
   sha256 "f5b2c010d13d97d57a7b2b222eab32d38cd6dad9dd6519bc9d1844e79119ba90"
-  license ""
+  license "BSD-3-Clause"
 
   # depends_on "cmake" => :build
 
